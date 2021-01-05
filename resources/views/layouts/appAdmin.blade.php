@@ -34,28 +34,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @guest
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/')}}">Home</a>
+                            <a class="nav-link" href="{{url('admin/home')}}">Home</a>
                         </li>
-                        @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('user/solution')}}">Home</a>
-                        </li>
-                        @endguest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('/aboutus')}}">About Us</a>
-                        </li>
+                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Solution
+                            Add Item
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{url('user/pemesanantanah')}}">Pesan Tanah Makam</a>
-                            <a class="dropdown-item" href="{{url('user/pengurusansurat')}}">Pengurusan Surat Kematian</a>
-                            <a class="dropdown-item" href="{{url('user/pemesananambulance')}}">Pemesanan ambulance</a>
+                                <a class="dropdown-item" href="{{url('admin/tanahmakam')}}">Tanah Makam</a>
+                                <a class="dropdown-item" href="{{url('admin/ubahhargapage')}}">Ubah Harga</a>
                             </div>
-                        </li>
+                        </li> 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -72,9 +64,7 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('user/cart') }}">Keranjang</a>
-                        </li>
+                        
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Action</a>
                                     <a class="dropdown-item" href="#">Another action</a>
