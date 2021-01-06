@@ -56,8 +56,11 @@ Route::group(['prefix' => 'admin' , 'middleware' => ['auth']], function(){
     Route::get('/ubahhargapage' ,'AdminController@ubahhargapage');
     Route::get('/detail/{id}' , 'AdminController@detail');
     Route::get('/detailverif/{id}' , 'AdminController@detailverif');
-
+    
     Route::post('/addtanah' , 'AdminController@itemtanah');
     Route::post('/ubahharga' , 'AdminController@ubahharga');
+    Route::get('/listtanah' , 'AdminController@listtanah');
+    Route::get('/edittanah/{id}' , 'AdminController@edittanah');
+    Route::post('/processedittanah/{id}' , 'AdminController@processedittanah');
     Route::post('/verifikasi/{id}' , 'AdminController@verifikasi');
 });

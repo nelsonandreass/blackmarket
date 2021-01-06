@@ -136,6 +136,31 @@ class AdminController extends Controller
         return view('admin.detailverif' , ['datas' => $datas , 'id' => $id]);
     }
     
+    public function listtanah(){
+        $datas = ItemTanah::get();
+        return view('admin.listtanah' , ['datas' => $datas]);
+    }
+
+    public function edittanah($id){
+        $data = ItemTanah::where('id' , $id)->first();
+
+        return view('admin.edittanah' , ['data' => $data]);
+    }
+
+    public function processedittanah(Request $request, $id){
+        $foto = $request->file('foto');
+        $nama = $request->input('nama');
+        $harga = $request->input('harga');
+        if(is_null($foto)){
+            ItemTanah::where('id' , $id)->update(['nama' => $nama , 'harga' => $harga]);
+        }
+        else{
+            $image_name = time() . '.' . $foto->getClientOriginalExtension();
+            $filefoto = Storage::putFileAs('public',$foto,$image_name);
+            ItemTanah::where('id' , $id)->update(['foto' => $filefoto, 'nama' => $nama , 'harga' => $harga]);
+        }
+        return redirect('admin/listtanah');
+    }
     
     public function verifikasi($id){
         Cart::where('id' , $id)->where('status',"Sudah dibayar")->update(['status' => "Sudah diverifikasi"]);

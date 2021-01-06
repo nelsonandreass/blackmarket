@@ -45,6 +45,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{url('admin/tanahmakam')}}">Tanah Makam</a>
+                                <a class="dropdown-item" href="{{url('admin/listtanah')}}">List Tanah Makam</a>
                                 <a class="dropdown-item" href="{{url('admin/ubahhargapage')}}">Ubah Harga</a>
                             </div>
                         </li> 
